@@ -1,0 +1,100 @@
+
+@use "../abstract" as abstract;
+
+body{
+    font-weight: 30rem;
+     font-family: "Lato", sans-serif;
+     list-style: 1.7;
+     padding: 3rem;
+     color:abstract.$color-dark-grey;
+}
+
+
+
+.header-primary{
+    text-transform: uppercase;
+    color:abstract.$color-white;
+    backface-visibility: hidden;
+   
+    &--main{
+        display: block;
+        font-weight: 400;
+        font-size: 5rem;
+        letter-spacing: 3.8rem;
+        animation-name: leftMove;
+        animation-duration: 1s;
+        animation-timing-function:ease-in-out;
+
+
+        
+        @include abstract.respond(phone) {
+            letter-spacing: 1rem;
+            font-size: 4rem;
+        }
+
+      
+    
+        }
+        
+        &--sub{
+            display: block;
+            font-weight: 500;
+            font-size: 1.6rem;
+         letter-spacing: 1.74rem;
+         margin-bottom: 6rem;
+            animation-name: rightMove;
+        animation-duration: 1s;
+        animation-timing-function: ease-in-out;
+
+        @include abstract.respond(phone) {
+            letter-spacing: .5rem;
+        }
+       
+    
+        }
+}
+
+.heading-secondary{
+    font: 3.5rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    display:inline-block;
+    background-image: linear-gradient(to right, abstract.$color-primary-light, abstract.$color-primary-dark);
+    -webkit-background-clip: text;
+    color: transparent;
+    letter-spacing: .2rem;
+    transition: all .2s;
+
+    
+    @include abstract.respond(tab-port) {
+        font-size: 3rem;
+    }
+
+    @include abstract.respond(phone) {
+        font-size: 2.5rem;
+    }
+
+
+    &:hover{
+         transform: skewY(2deg) skewX(15deg) scale(1.1) ;
+         box-shadow: .5rem 1rem 2rem rgb(abstract.$color-black, .2);
+    }
+}
+
+.heading-tertiary{
+    font-size: abstract.$default-font-size;
+    font-weight: 700;
+    text-transform: uppercase;
+
+}
+
+.paragraph{
+font-size: abstract.$default-font-size;
+line-height: 2rem;
+
+&:not(:last-child){
+    margin-bottom: 3rem;
+}
+
+
+}
